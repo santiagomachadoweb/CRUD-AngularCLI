@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+.linha-botoes button,
+.linha-botoes a {
+    margin: 8px 8px 0px 0px;
+}
+
+.form-padrao {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-padrao > * {
+    width: 100%;
+}
+
+.componente-container {
+    padding: 15px;
+    margin: 40px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-toolbar {
+    background: #ebebeb;
+    color: rgba(0,0,0,.87);
+}
+
+.mat-drawer-content {
+    position: relative;
+    z-index: 1;
+    display: block;
+    height: 100%;
+    overflow: auto;
+    background: #F9F9F9;
+}

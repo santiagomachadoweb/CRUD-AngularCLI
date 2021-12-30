@@ -1,0 +1,35 @@
+<mat-toolbar><h1>Lista de Itens</h1></mat-toolbar>
+
+
+
+<div class="componente-container">
+    <div *ngIf="itens$ | async as itens; else carregando">
+        <div class="table-container">
+        <table mat-table [dataSource]="itens$">
+            <caption class="clipped">
+                Tabela com uma lista de itens
+            </caption>
+            <ng-container matColumnDef="id">
+                <th scope="col" mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+                <td mat-cell *matCellDef="let item">
+                    <a routerLink="/itens/editar/{{ item.id }}"> {{ item.id }}</a>
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="nome">
+                <th scope="col" mat-header-cell *matHeaderCellDef mat-sort-header>Nome</th>
+                <td mat-cell *matCellDef="let item">
+                    <a routerLink="/itens/editar/{{ item.id }}"> {{ item.nome }}</a>
+                </td>
+            </ng-container>
+        <tr mat-header-row *matHeaderRowDef="colunasTabela"></tr>
+        <tr mat-row *matRowDef="let row; columns: colunasTabela;"></tr>
+        </table>
+    </div>
+</div>
+    <ng-template #carregando>
+        <mat-spinner></mat-spinner>
+    </ng-template>
+    <div class="linha-botoes">
+        <button mat-raised-button color="primary" routerLink="/itens/cadastrar">Cadastrar</button>
+    </div>
+</div>
